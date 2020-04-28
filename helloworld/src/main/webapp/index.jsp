@@ -16,15 +16,6 @@
 	  <link rel="stylesheet" href="./styles/login.css">
 	  <link rel="stylesheet" href="./styles/general.css">
 
-	  <script>
-		 $(document).ready(function(){
-			$(".message a").click(function(){
-				
-				$("form").animate({height: "toggle", opacity: "toggle"}, "slow");
-			});
-			});
-	  </script>
-
 	</head>
 
 	<body>
