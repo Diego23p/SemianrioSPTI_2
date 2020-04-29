@@ -1,4 +1,4 @@
-/*package edu.escuelaing.arep.Connection.impl;
+package Connection.impl;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,16 +7,20 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import edu.escuelaing.arep.Connection.DBConnection;
-import edu.escuelaing.arep.Model.estudiante;
+import Connection.DBConnection;
+import Model.materia;
 
 
 public class DBConnectionImpl implements DBConnection{
 
 	
-	private  String user = "krjcafarpdqaqk";
-    private  String passw = "181334f00fdee6a334d4093c731df9855486e18430ae3bf3f83dd11e0365a85d";
-    private  String url = "jdbc:postgresql://ec2-3-213-192-58.compute-1.amazonaws.com:5432/d3fh8fvthfbg5h?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
+	private  String user = "SantiagoVega";
+    private  String passw = "Admin1234";
+    private  String host = "127.0.0.1";
+	private  String port = "50382";
+	private  String database = "localdb";
+	private  String classname = "com.mysql.jdbc.Driver";
+	private  String URL = "jdbc:mysql://"+host+":"+port+"/"+database;
     private  Connection connection;
     
     public DBConnectionImpl() throws SQLException {
@@ -26,8 +30,8 @@ public class DBConnectionImpl implements DBConnection{
 
 	public void conectar() throws SQLException {
 		try {
-			Class.forName("org.postgresql.Driver");
-	        connection = DriverManager.getConnection(url, user, passw);
+			Class.forName(classname);
+	        connection = DriverManager.getConnection(URL, user, passw);
 	     } catch (SQLException ex) {
 	        throw new SQLException(ex);
 	     } catch (ClassNotFoundException ex) {
@@ -37,23 +41,22 @@ public class DBConnectionImpl implements DBConnection{
 	}
 	
 
-	public ArrayList<estudiante> getEstudiantes()
+	public ArrayList<materia> getMateria()
 	   {
-			ArrayList<estudiante> listaContactos=new ArrayList<estudiante>();
+			ArrayList<materia> listaContactos=new ArrayList<materia>();
 	      try
 	      {
 	
 	         Statement st = connection.createStatement();
-	         ResultSet rs = st.executeQuery("select * from estudiantes" );
+	         ResultSet rs = st.executeQuery("select * from materia" );
 	         while (rs.next())
 	         {
-	        	 estudiante est = new estudiante();
-	        	 est.setCarnet(rs.getInt("carnet"));
-	        	 est.setNombres(rs.getString("nombres"));
-	        	 est.setApellidos(rs.getString("apellidos"));
-	        	 est.setSemestre(rs.getInt("semestre"));
-	        	 est.setCarrera(rs.getString("carrera"));
-	            listaContactos.add(est);
+	        	 materia mat = new materia();
+	        	 mat.setNemonico(rs.getString("nemonico"));
+	        	 mat.setProfesor(rs.getString("profesor"));
+	        	 mat.setCreditos(rs.getInt("creditos"));
+	        	 mat.setNombre(rs.getString("nombre"));
+	            listaContactos.add(mat);
 	         }
 	         rs.close();
 	         st.close();
@@ -65,4 +68,4 @@ public class DBConnectionImpl implements DBConnection{
 	      return listaContactos;
 	   }
 
-}*/
+}
