@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>  
   <groupId>example.demo</groupId>  
   <artifactId>helloworld</artifactId>  
-  <packaging>war</packaging>  
+  <packaging>jar</packaging>  
   <version>1.0</version>  
   <name>helloworld Maven Webapp</name>  
   <url>http://maven.apache.org</url>  
@@ -46,7 +46,7 @@
               <resource>
                 <directory>${project.basedir}/target</directory>
                 <includes>
-                  <include>*.war</include>
+                  <include>*.jar</include>
                 </includes>
               </resource>
             </resources>
