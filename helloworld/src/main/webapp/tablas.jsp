@@ -1,6 +1,6 @@
 <html>
 	<head>
-	  <title>Login</title>
+	  <title>tablas</title>
 	  <meta charset="UTF-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  <meta name="MobileOptimized" content="width" />
@@ -20,29 +20,9 @@
 
 	<body>
 	
-	<div class="myAlert-top alert alert-success" id="notifyOk">
-		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-	</div>
-	<div class="myAlert-top2 alert alert-danger" id="notifyNoOk">
-		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-	</div>
+	<h2>Bienvenido</h2>
 
-	  <div class="login-page">
-		<div class="form">
-		  <img src="img/logo.PNG">
-
-		  <form class="login-form" action='javascript:app.checkPassword()'>
-			<p class="message"><b>Ingresar:<b></p>
-            <input type="text" placeholder="Username" id="username" />
-			<br></br>
-            <input type="password" placeholder="Password" id="psw" />
-			<br></br>
-			
-		  </form>
-		  <a href="/.auth/login/aad?post_login_redirect_url=tablas.jsp">Log in</a>
-
-		</div>
-	  </div>
+	  
 	  
 	</body>
 <html>
